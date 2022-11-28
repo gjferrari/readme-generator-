@@ -25,6 +25,8 @@ const generateMD = () =>
     ## Tests 
 
     ## Questions
+    To see more of my work, follow me at github.com/${username}.
+    For further questions about this project, contact me at ${email}.
 `;
 
 inquirer.prompt([
@@ -32,13 +34,6 @@ inquirer.prompt([
     type: "input",
     name: "projectTitle",
     message: "What is the name of your project?",
-  },
-
-  {
-    type: "input",
-    name: "description",
-    message:
-      "Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide: What was your motivation?  Why did you build this project? What problem does it solve?",
   },
 
   {
@@ -52,6 +47,21 @@ inquirer.prompt([
     name: "email",
     message: "What is your email address?",
   },
+
+  {
+    type: "input",
+    name: "description",
+    message:
+      "Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide: What was your motivation?  Why did you build this project? What problem does it solve?",
+  },
+
+  {
+    type: "list",
+    message: "What type of liscense would you like to use?",
+    name: "liscense",
+    choices: ["MIT", "GPLv3", "GPL"],
+  },
+
   //   {
   //     type: "checkbox",
   //     message: "What languages do you know?",
