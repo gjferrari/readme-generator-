@@ -1,37 +1,56 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+// const questions = [
+//   "projectTitle",
+//   "description",
+//   "installation",
+//   "usage",
+//   "liscense",
+//   "contributing",
+//   "tests",
+// ];
 
-const generateMD = () =>
-  `#${projectTitle}
+const generateMD = ({
+  projectTitle,
+  description,
+  installation,
+  usage,
+  liscense,
+  contributing,
+  tests,
+  username,
+  email,
+}) =>
+  `# ${projectTitle}
 
-    ## Description
+## Description
     ${description}
 
-    ## Table of Contents 
-    - [Installation](#installation)
-    - [Usage](#usage)
-    - [License](#license)
-    - [Contributing](#contributing)
-    - [Tests](#tests)
+## Table of Contents 
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
     
-    ## Installation 
+## Installation 
     ${installation}
 
-    ## Usage
+## Usage
     ${usage}
 
-    ## License 
+## License 
     ${liscense}
 
-    ## Contributing 
+## Contributing 
     ${contributing}
 
-    ## Tests 
+## Tests 
     ${tests}
 
-    ## Questions
-    To see more of my work, follow me at github.com/${username}.
-    For further questions about this project, contact me at ${email}.
+## Questions
+To see more of my work, follow me at github.com/${username}.
+For further questions about this project, contact me at ${email}.
 `;
 
 inquirer
@@ -58,7 +77,19 @@ inquirer
       type: "input",
       name: "description",
       message:
-        "Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide: What was your motivation?  Why did you build this project? What problem does it solve?",
+        "Provide a short description explaining the what, why, and how of your project.",
+    },
+
+    {
+      type: "input",
+      name: "installation",
+      message: "What are the steps required to install your project?",
+    },
+
+    {
+      type: "input",
+      name: "usage",
+      message: "Provide instructions and examples for use.",
     },
 
     {
@@ -67,19 +98,17 @@ inquirer
       name: "liscense",
       choices: ["MIT", "GPLv3", "GPL"],
     },
+    {
+      type: "input",
+      name: "contributing",
+      message: "What are the guidelines for contribution?",
+    },
 
-    //   {
-    //     type: "checkbox",
-    //     message: "What languages do you know?",
-    //     name: "stack",
-    //     choices: ["HTML", "CSS", "JavaScript", "MySQL"],
-    //   },
-    //   {
-    //     type: "list",
-    //     message: "What is your preferred method of communication?",
-    //     name: "contact",
-    //     choices: ["email", "phone", "telekinesis"],
-    //   },
+    {
+      type: "input",
+      name: "tests",
+      message: "Include any tests and example for your application.",
+    },
   ])
   .then((answers) => {
     const readmeContent = generateMD(answers);
@@ -88,6 +117,8 @@ inquirer
       err ? console.log(err) : console.log("Successfully created Readme!")
     );
   });
+
+function init() {}
 
 //   .then((data) => {
 //     const filename = `${data.name.toLowerCase().split(" ").join("")}.json`;
