@@ -111,9 +111,3 @@ inquirer
       err ? console.log(err) : console.log("Successfully created Readme!")
     );
   });
-
-// function init() {
-//   generateMD;
-// }
-
-// init();
