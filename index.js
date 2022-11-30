@@ -34,7 +34,7 @@ const generateMD = ({
     ${usage} 
 
 ## License 
-    This application is covered by the ${liscense} liscense.
+    This application is covered by the ${liscense} license.
 
 ## Contributing 
     ${contributing}
