@@ -17,7 +17,7 @@ const generateMD = ({
   
   ${renderLicenseBadge(liscense)}
 ## Description
-    ${description}
+${description}
 
 ## Table of Contents 
 - [Installation](#installation)
@@ -28,19 +28,19 @@ const generateMD = ({
 - [Questions](#questions)
     
 ## Installation 
-    ${installation}
+${installation}
 
 ## Usage
-    ${usage} 
+${usage} 
 
 ## License 
-    This application is covered by the ${liscense} license.
+This application is covered by the ${liscense} license.
 
 ## Contributing 
-    ${contributing}
+${contributing}
 
 ## Tests 
-    ${tests}
+${tests}
 
 ## Questions
 To see more of my work, follow me at github.com/${username}.
