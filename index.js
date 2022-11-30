@@ -1,22 +1,8 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const renderLicenseBadge = require("./generateLiscense");
-// const badges = require("./generateLiscense");
-// const questions = [
-//     "projectTitle",
-//     "description",
-//     "installation",
-//     "usage",
-//     "liscense",
-//     "contributing",
-//     "tests",
-//     "username",
-//     "email",
-//     ,
-// ];
 
 const generateMD = ({
-  // questions,
   projectTitle,
   description,
   installation,
@@ -39,6 +25,7 @@ const generateMD = ({
 - [License](#license)
 - [Contributing](#contributing)
 - [Tests](#tests)
+- [Questions](#questions)
     
 ## Installation 
     ${installation}
