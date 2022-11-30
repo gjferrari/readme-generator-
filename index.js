@@ -1,16 +1,22 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const renderLicenseBadge = require("./generateLiscense");
+// const badges = require("./generateLiscense");
 // const questions = [
-//   "projectTitle",
-//   "description",
-//   "installation",
-//   "usage",
-//   "liscense",
-//   "contributing",
-//   "tests",
+//     "projectTitle",
+//     "description",
+//     "installation",
+//     "usage",
+//     "liscense",
+//     "contributing",
+//     "tests",
+//     "username",
+//     "email",
+//     ,
 // ];
 
 const generateMD = ({
+  // questions,
   projectTitle,
   description,
   installation,
@@ -22,7 +28,8 @@ const generateMD = ({
   email,
 }) =>
   `# ${projectTitle}
-
+  
+  ${renderLicenseBadge(liscense)}
 ## Description
     ${description}
 
@@ -37,10 +44,10 @@ const generateMD = ({
     ${installation}
 
 ## Usage
-    ${usage}
+    ${usage} 
 
 ## License 
-    ${liscense}
+    This application is covered by the ${liscense} liscense.
 
 ## Contributing 
     ${contributing}
@@ -96,7 +103,7 @@ inquirer
       type: "list",
       message: "What type of liscense would you like to use?",
       name: "liscense",
-      choices: ["MIT", "GPLv3", "GPL"],
+      choices: ["MIT", "Apache 2.0", "GPLv3"],
     },
     {
       type: "input",
@@ -118,12 +125,8 @@ inquirer
     );
   });
 
-function init() {}
+// function init() {
+//   generateMD;
+// }
 
-//   .then((data) => {
-//     const filename = `${data.name.toLowerCase().split(" ").join("")}.json`;
-
-//     fs.writeFile(filename, JSON.stringify(data, null, "\t"), (err) =>
-//       err ? console.log(err) : console.log("Success!")
-//     );
-//   });
+// init();
